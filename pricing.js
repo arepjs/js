@@ -26,16 +26,12 @@ const pricing = {
   }
 };
 
-pricing[currency].pricing.forEach(populateSelects);
-
-function populateSelects(i) {
-    i.forEach((value, key) => {
-      let select = document.getElementById(key);
-      value.forEach((value, key) => {
-        let option = document.createElement("option");
-        option.text = (key * 1000).toLocaleString();
-        option.value = value;
-        select.appendChild(option);
-      })
+pricing[currency].pricing.forEach((array, key) => {
+  let select = document.getElementById(key);
+  array.forEach((value, text) => {
+    let option = document.createElement("option");
+    option.text = 'Up to ' + (text * 1000).toLocaleString() + 'contacts';
+    option.value = value;
+    select.appendChild(option);
   })
-}
+});
