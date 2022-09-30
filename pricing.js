@@ -28,5 +28,6 @@ const pricing = {
 
 $(document).on("change", "select", function() {
         var selected = $(this).find(":selected").val();
+        console.log('selectChange');
         $("select").val(selected).prop('selected', true);
       });
