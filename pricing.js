@@ -26,11 +26,6 @@ const pricing = {
   }
 };
 
-$(document).on("change", "select",function() {
-    var num = $(this).val();
-    $.each($(".orderselect").not(this),function(){
-      if($(this).val() !== num){
-        $(this).val(num).prop('selected', true);
-      }
-    });
-});
+$(document).on("change", "select", function() {
+        $("select").val(this.val()).prop('selected', true);
+      });
