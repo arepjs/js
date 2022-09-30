@@ -29,7 +29,7 @@ const pricing = {
 $(document).on("change", "select",function() {
     var num = $(this).val();
     $.each($(".orderselect").not(this),function(){
-      if($(this).val() == num){
+      if($(this).val() !== num){
         $(this).val(num).prop('selected', true);
       }
     });
