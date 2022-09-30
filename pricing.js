@@ -27,5 +27,6 @@ const pricing = {
 };
 
 $(document).on("change", "select", function() {
-        $("select").val(this.val()).prop('selected', true);
+        var selected = $(this).find(":selected").val();
+        $("select").val(selected).prop('selected', true);
       });
